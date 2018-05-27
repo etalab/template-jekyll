@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<section class="article article__full">
+  {% include hero.html title=page.title date=page.date image=page.image %}
+  <div class="article__content" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="article__container">
+      <div class="richtext" itemprop="articleBody">
+        {{ content }}
+      </div>
+    </div>
+    {% if site.disqus.shortname %}
+      {% include disqus_comments.html %}
+    {% endif %}
+  </div>
+</section>

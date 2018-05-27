@@ -1,0 +1,27 @@
+.page .hero__container {
+  min-height: unset;
+}
+
+.page .hero h1 {
+  margin: 0;
+}
+
+a.navbar__home {
+  font-family: Evolventa;
+  display: flex;
+  align-items: center;
+  color: $almost-black;
+  letter-spacing: 0.05em;
+}
+
+.navbar__home img {
+  vertical-align: middle;
+}
+
+.navbar__logo {
+  margin-right: 0.8em;
+}
+
+.navbar__gouvfr {
+  height: 18.4px;
+}

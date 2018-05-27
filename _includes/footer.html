@@ -1,0 +1,27 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__logo">
+      <img src="{{file.path}}/assets/images/logo-footer.svg" alt="Etalab">
+      {% if site.data.footer.social %}
+      <ul class="footer__social">
+        {% for item in site.data.footer.social %}
+        <li><a href="{{ item.target }}"><svg class="icon icon-{{ item.icon }}"><use xlink:href="#icon-{{ item.icon }}"></use></svg></a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% for item in site.data.footer.links %}
+    <div class="footer__links">
+      {% if item.label %}
+      <h2>{{ item.label}}</h2>     
+      {% endif %}
+      <ul>
+      {% for link in item.children %}
+      <li><a href="{{ link.target }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
+    {% endfor %}
+    <div></div>
+  </div>
+</footer>
