@@ -1,0 +1,34 @@
+url: https://template-jekyll.data.gouv.fr
+name: jekyll-theme-gouvfr
+description: Thème Jekyll basé sur template.data.gouv.fr
+
+lang: fr
+
+i18n:
+  en:
+    edit: Edit this page
+  fr:
+    edit: Editer cette page
+
+github_repository: etalab/template-jekyll.data.gouv.fr
+
+include: ["_pages"]
+
+permalink: pretty
+
+exclude:
+  - README.md
+  - docker-compose.yml
+  - circle.yml
+  - deploy
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .circle
+  - node_modules
+  - yarn.lock
+  - package.json
+
+sass:
+  style: compressed
+  sass_dir: _sass

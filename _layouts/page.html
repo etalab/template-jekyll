@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+<div class="page article">
+{% include hero.html title=page.title %}
+<section>
+  <div class="container">
+    <div class="richtext">
+      {{ content }}
+    </div>
+    {% comment %}
+        Use the github edit link until netlify-cms support easy deep link.
+        See: https://github.com/netlify/netlify-cms/issues/697
+    {% endcomment %}
+    <a class="edit-button" href="https://github.com/{{ site.github_repository }}/edit/master/{{ page.path }}">
+        ✎ {{ site.i18n[lang].edit }}
+    </a>
+  </div>
+</section>
