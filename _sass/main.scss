@@ -6,22 +6,10 @@
   margin: 0;
 }
 
-a.navbar__home {
-  font-family: Evolventa;
-  display: flex;
-  align-items: center;
-  color: $almost-black;
-  letter-spacing: 0.05em;
+.article__preview .article__author-name {
+  margin-left: 0;
 }
 
-.navbar__home img {
-  vertical-align: middle;
-}
-
-.navbar__logo {
-  margin-right: 0.8em;
-}
-
-.navbar__gouvfr {
-  height: 18.4px;
+.article__preview img + .article__author-name {
+  margin-left: 0.5em;
 }
