@@ -112,32 +112,13 @@ a:hover,
 a:focus,
 a:visited,
 a:active {
-  color: #0053b3;
-  text-decoration: none;
   -webkit-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
+  color: currentColor;
 }
 
 small {
   font-size: 0.875em;
-}
-
-.tag-list {
-  padding: 0;
-  margin: 0;
-}
-
-.tag {
-  background: #0053b3;
-  border-radius: 3px;
-  display: inline-block;
-  padding: 0.3em 0.8em;
-  margin-right: 0.5em;
-  color: #fff;
-}
-
-.tag a {
-  color: #fff;
 }
 
 .modals .button {
@@ -224,6 +205,7 @@ input[type="button"]:visited {
   position: relative;
   top: 0;
   overflow: hidden;
+  text-decoration: none;
 }
 
 a.button:hover,
@@ -450,6 +432,7 @@ a.button.secondary {
 
 .footer__links a {
   color: #fff;
+  text-decoration: none;
 }
 
 .footer__logo {
@@ -562,6 +545,7 @@ h1.hero__white-background {
 
 .nav__item a,
 .nav__item .dropdown {
+  text-decoration: none;
   color: #1c1c1c;
   padding: 0.4em 0.8em;
   border-radius: 3px;
@@ -589,8 +573,9 @@ a.navbar__home {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: $almost-black;
+  color: #26353f;
   letter-spacing: 0.05em;
+  text-decoration: none;
 }
 
 .navbar__home img {
@@ -759,6 +744,9 @@ span.navbar__domain {
 
 section {
   padding: 5em 0;
+}
+
+.section-white {
   background-color: #fff;
 }
 
@@ -1121,20 +1109,20 @@ fieldset {
 }
 
 .side-pane li.side-pane__dropdown .side-pane__link {
-  background: url("../images/icons/arrow-right.svg") no-repeat;
+  background: url("../images/icons/external/arrow-right.svg") no-repeat;
   background-position: center right 1em;
   background-size: 15px 15px;
 }
 
 .side-pane li.side-pane__dropdown:hover .side-pane__link {
-  background: #c9d3df url("../images/icons/arrow-right.svg") no-repeat;
+  background: #c9d3df url("../images/icons/external/arrow-right.svg") no-repeat;
   background-position: center right 1em;
   background-size: 15px 15px;
 }
 
 .side-pane li.unfolded.side-pane__dropdown .side-pane__link,
 .side-pane li.unfolded.side-pane__dropdown:hover .side-pane__link {
-  background-image: url("../images/icons/arrow-down-white.svg");
+  background-image: url("../images/icons/external/arrow-down-white.svg");
   background-color: transparent;
 }
 
@@ -1158,11 +1146,13 @@ fieldset {
   list-style-type: none;
   color: #53657d;
   border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .side-pane__submenu li {
   list-style-type: none;
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 
 .side-pane__submenu .side-pane__sublink:hover {
@@ -1359,7 +1349,7 @@ fieldset {
 
 .article__author {
   display: inline-block;
-  width: 50%;
+  max-width: 270px;
   padding: 1em;
   font-size: 15px;
 }
@@ -1391,6 +1381,10 @@ fieldset {
   line-height: 0.8em;
 }
 
+.article__author-description p:last-child {
+  margin-bottom: 0;
+}
+
 /* article list for blog and alike */
 .article__preview {
   margin: 0 auto;
@@ -1404,7 +1398,6 @@ fieldset {
 .article__preview .article__author {
   width: auto;
   padding: 0;
-  font-size: 14px;
 }
 
 .article__preview .article__author img {
@@ -1418,6 +1411,7 @@ fieldset {
 
 a.article__link {
   color: #26353f;
+  text-decoration: none;
 }
 
 a.article__link:hover {
@@ -1489,14 +1483,15 @@ a.article__link:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
-.card + .card {
+.row > .card + .card {
   margin-left: 2em;
 }
 
 @media (max-width: 749px) {
-  .card + .card {
+  .row > .card + .card {
     margin-left: 0;
     margin-top: 2em;
   }
@@ -1518,6 +1513,9 @@ a.article__link:hover {
 
 .card__content {
   padding: 2em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .card__content h3 {
@@ -1534,6 +1532,11 @@ a.article__link:hover {
 
 .card__content :last-child {
   margin-bottom: 0;
+}
+
+.card__extra {
+  border-top: 1px solid #adb9c9;
+  padding: 1em;
 }
 
 .modal__backdrop {
@@ -1589,5 +1592,30 @@ a.article__link:hover {
 
 .modal .button__group .button + .button {
   margin-left: 1em;
+}
+
+.label-list {
+  padding: 0;
+  margin: 0;
+}
+
+.label {
+  background-color: #ebeff3;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  margin: 0.25em;
+  font-size: 0.875em;
+}
+
+.label--active {
+  background-color: #0053b3;
+  color: #fff;
+}
+
+.label--inactive {
+  background-color: #fff;
+  border: 1px solid #adb9c9;
+  color: #53657d;
 }
 
