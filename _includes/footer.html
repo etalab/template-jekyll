@@ -5,7 +5,7 @@
       {% if site.data.footer.social %}
       <ul class="footer__social">
         {% for item in site.data.footer.social %}
-        <li><a href="{{ item.target }}"><svg class="icon icon-{{ item.icon }}"><use xlink:href="#icon-{{ item.icon }}"></use></svg></a></li>
+        <li><a href="{{ item.url }}"><svg class="icon icon-{{ item.icon }}"><use xlink:href="#icon-{{ item.icon }}"></use></svg></a></li>
         {% endfor %}
       </ul>
       {% endif %}
@@ -13,13 +13,18 @@
     {% for item in site.data.footer.links %}
     <div class="footer__links">
       {% if item.label %}
-      <h2>{{ item.label}}</h2>     
+      <h2>{{ item.label}}</h2>
       {% endif %}
       <ul>
-      {% for link in item.children %}
-      <li><a href="{{ link.target }}">{{ link.label }}</a></li>
-      {% endfor %}
-    </ul>
+        {% for link in item.children %}
+          {% if link.target %}
+            {% assign target = site.pages | where:"path",link.target | first %}
+            <li><a href="{{ target.url }}">{{ link.label }}</a></li>
+          {% elsif link.url %}
+            <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
     {% endfor %}
     <div></div>
