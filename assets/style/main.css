@@ -1,3 +1,9 @@
+:root {
+  /* Colors */
+
+  /* Theme */
+}
+
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-size: 16px;
@@ -666,12 +672,13 @@ a.navbar__home {
 }
 
 .navbar__gouvfr {
-  height: 20px;
+  height: 100%;
 }
 
 span.navbar__domain {
   font-weight: 400;
   color: #26353f;
+  -webkit-padding-after: 3px; /* fix the broken line-height in logo */
 }
 
 @media (max-width: 749px) {
@@ -705,7 +712,7 @@ span.navbar__domain {
   right: 0;
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
-  z-index: 90;
+  z-index: 1;
 }
 
 .dropdown-content a {
@@ -1701,3 +1708,4 @@ a.label {
   border: 1px solid #adb9c9;
   color: #53657d;
 }
+
