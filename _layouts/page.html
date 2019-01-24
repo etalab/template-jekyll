@@ -3,7 +3,6 @@ layout: default
 ---
 
 {% assign lang = page.lang | default: site.lang | default: "en" %}
-{% assign base_path = site.collections_dir | default: "" | append: "/" %}
 
 <div class="page article">
 {% include hero.html title=page.title %}
@@ -16,7 +15,11 @@ layout: default
         Use the github edit link until netlify-cms support easy deep link.
         See: https://github.com/netlify/netlify-cms/issues/697
     {% endcomment %}
-    <a class="edit-button" href="https://github.com/{{ site.github_repository }}/edit/master{{ base_path }}{{ page.path }}">
+    {% if site.collections_dir == "" or site.collections_dir == nil %}
+      <a class="edit-button" href="https://github.com/{{ site.github_repository }}/edit/master/{{ page.path }}">
+    {% else %}
+      <a class="edit-button" href="https://github.com/{{ site.github_repository }}/edit/master/{{ site.collections_dir }}/{{ page.path }}">
+    {% endif %}
         ✎ {{ site.i18n[lang].edit }}
     </a>
   </div>
