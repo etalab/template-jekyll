@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-gouvfr"
-  spec.version       = "0.0.6"
+  spec.version       = "0.0.7"
   spec.authors       = ["Etalab"]
   spec.email         = ["data.gouv@data.gouv.fr"]
 

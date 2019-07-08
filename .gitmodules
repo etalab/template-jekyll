@@ -1,0 +1,3 @@
+[submodule "css/template.data.gouv.fr"]
+	path = css/template.data.gouv.fr
+	url = git@github.com:etalab/template.data.gouv.fr.git
